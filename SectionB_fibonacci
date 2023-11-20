@@ -1,0 +1,33 @@
+anike@ANIKET-SHARMA ~
+$ cat>itlab.sh
+#!/bin/bash
+fibonacci() {
+    if [ "$1" -le 1 ]; then
+        echo "$1"
+    else
+        a=$(fibonacci "$(( $1 - 1 ))")
+        b=$(fibonacci "$(( $1 - 2 ))")
+        echo "$(( a + b ))"
+    fi
+}
+
+# Input the number of terms you want in the series
+read -p "Enter the number of terms: " n
+
+# Print the Fibonacci series
+echo "Fibonacci Series:"
+for (( i=0; i<n; i++ )); do
+    echo -n "$(fibonacci "$i") "
+done
+
+echo ""
+
+anike@ANIKET-SHARMA ~
+$ chmod +x itlab.sh
+
+anike@ANIKET-SHARMA ~
+$ ./itlab.sh
+
+Enter the number of terms: 5
+Fibonacci Series:
+0 1 1 2 3

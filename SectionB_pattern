@@ -1,0 +1,26 @@
+anike@ANIKET-SHARMA ~
+$ cat>itlab2.sh
+#!/bin/bash
+# Get user input for the number of rows
+echo -n "Enter the number of rows: "
+read rows
+
+# Print the pattern
+for ((i = 1; i <= rows; i++)); do
+    for ((j = i; j >= 1; j--)); do
+        echo -n "$j "
+    done
+    echo    # Move to the next line
+done
+
+anike@ANIKET-SHARMA ~
+$ chmod +x itlab2.sh
+
+anike@ANIKET-SHARMA ~
+$ ./itlab2.sh
+
+Enter the number of rows: 4
+1
+2 1
+3 2 1
+4 3 2 1
